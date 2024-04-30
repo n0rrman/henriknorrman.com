@@ -58,14 +58,14 @@ export default function Terminal() {
   };
 
   return (
-    <div className="flex justify-center items-center text-[1.77vw] sm:text-[0.675rem] lg:text-sm w-full h-[75ch] pb-[12ch]">
+    <div className="flex justify-center items-center text-[1.77vw] md:text-xs lg:text-sm w-full">
       <div
         onClick={() => {
           inputRef.current?.focus();
         }}
-        className="flex justify-center items-center absolute w-full h-full overflow-hidden"
+        className="flex justify-center items-center absolute overflow-hidden"
       >
-        <div className="relative min-w-[104vw] sm:min-w-[94ch] min-h-[200ch] mt-[12ch]">
+        <div className="relative w-[104vw] -mx-[2vw] md:mx-0 md:w-[93.5ch] aspect-[1.25]">
           <Image alt="" src={screenImg} fill></Image>
         </div>
       </div>
@@ -73,7 +73,7 @@ export default function Terminal() {
         onClick={() => {
           inputRef.current?.focus();
         }}
-        className={`font-['Courier_New','Courier'] m-[2.25ch] p-[1ch] bg-slate-800 text-slate-200 flex items-end w-full sm:w-[90ch] leading-snug tracking-wide h-[57.5ch] overflow-hidden`}
+        className={`font-['Courier_New','Courier'] px-[1.5ch] py-[0.5ch] mb-[13ch] bg-slate-800 text-slate-200 flex items-end w-[90ch] leading-snug tracking-wide h-[57ch] overflow-hidden`}
       >
         <form ref={formRef} onSubmit={handleSubmit}>
           <pre className="space-y-[0.25ch]">{renderedOutputs}</pre>
