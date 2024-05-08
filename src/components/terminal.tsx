@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 
+import { courier } from "../app/fonts";
+
 import screenImg from "/public/screen.svg";
 import { useFormState } from "react-dom";
 import { useState, startTransition, useRef, useEffect } from "react";
@@ -32,7 +34,7 @@ export default function Terminal() {
   const renderedOutputs = outputs.map(({ id, input, output }) => {
     return (
       <div
-        className={`flex flex-col gap-y-0.5 font-thin font-['Courier_New','Courier']`}
+        className={`flex flex-col gap-y-0.5 font-thin ${courier.className}`}
         key={id}
       >
         <p>
@@ -65,7 +67,7 @@ export default function Terminal() {
         }}
         className="flex justify-center items-center absolute overflow-hidden"
       >
-        <div className="relative w-[104vw] -mx-[2vw] md:mx-0 md:w-[93.5ch] aspect-[1.25]">
+        <div className="relative w-[104vw] -mx-[2vw] md:mx-0 md:w-[93.5ch] aspect-[1.25] pointer-events-none select-none">
           <Image alt="" src={screenImg} fill></Image>
         </div>
       </div>
@@ -73,7 +75,7 @@ export default function Terminal() {
         onClick={() => {
           inputRef.current?.focus();
         }}
-        className={`font-['Courier_New','Courier'] px-[1.5ch] py-[0.5ch] mb-[13ch] bg-slate-800 text-slate-200 flex items-end w-[90ch] leading-snug tracking-wide h-[57ch] overflow-hidden`}
+        className={`${courier.className} px-[1.5ch] py-[0.5ch] mb-[13ch] bg-slate-800 text-slate-200 flex items-end w-[90ch] leading-snug tracking-wide h-[57ch] overflow-hidden`}
       >
         <form ref={formRef} onSubmit={handleSubmit}>
           <pre className="space-y-[0.25ch]">{renderedOutputs}</pre>
