@@ -2,8 +2,8 @@
 
 import { z } from "zod";
 import { randomUUID } from 'crypto'
-import { promises as fs } from 'fs';
 
+import Commands from "./commands.json";
 import { ActionCode } from "./action-codes";
 
 const terminalSchema = z.object({
@@ -29,19 +29,10 @@ interface TerminalState {
 }
 
 async function callCommand(id: string, input: string, errorState: TerminalState) {
-    // Load command file to JSON
-    //      success -> continue
-    //      error   -> return error state
-    let data: [Command];
-    try {
-        const file = await fs.readFile(process.cwd() + '/src/actions/commands.json', 'utf8');
-        data = (JSON.parse(file) as [Command]);
-    } catch (err: unknown) {
-        return ({payload: {...errorState.payload, output: "Error: internal error"}} as TerminalState); 
-    } 
-
+    
     // Get command
-    const command = data.find(({cmd}: Command) => cmd === input);
+    const commands = (Commands as [Command]);
+    const command = commands.find(({cmd}: Command) => cmd === input);
 
     // -> Command not found
     if (!command) {
