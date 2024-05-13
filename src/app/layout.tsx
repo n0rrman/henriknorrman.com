@@ -16,12 +16,6 @@ export const metadata: Metadata = {
   },
 };
 
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-};
-
 export default function RootLayout({
   children,
 }: {
@@ -29,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-blue-100">{children}</body>
+      <body className="bg-slate-300">{children}</body>
     </html>
   );
 }
