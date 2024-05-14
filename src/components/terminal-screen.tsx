@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import screenImg from "/public/screen.svg";
-import { courier } from "../app/fonts";
+import { courier, hand } from "../app/fonts";
 import { CommandAction } from "@/actions";
 
 interface TerminalScreenProps {
@@ -38,18 +38,20 @@ export default function TerminalScreen({
 
   return (
     <div
-      className="flex justify-center items-center text-[1.77vw] sm:text-xs lg:text-sm w-full py-0 sm:py-7"
+      className="flex justify-center items-center text-[1.77vw] sm:text-xs lg:text-sm pb-[18ch] w-full"
       onClick={() => {
         inputRef!.current!.focus();
       }}
     >
-      <div className="flex z-50 justify-center items-center absolute overflow-hidden pointer-events-none">
-        <div className="hidden sm:block relative w-[93.5ch] aspect-[1.25] pointer-events-none select-none">
-          <Image alt="" src={screenImg} fill></Image>
+      <div className="flex z-30 justify-center items-center absolute pointer-events-none">
+        <div className="w-[100vw] overflow-hidden">
+          <div className="relative w-[240ch] -ml-[calc(120ch-50vw)] aspect-square pointer-events-none select-none -mt-[41ch]">
+            <Image alt="" src={screenImg} fill />
+          </div>
         </div>
       </div>
       <div
-        className={`${courier.className} z-40 px-[1.5ch] py-[0.5ch] mb-[13ch] bg-slate-800 text-slate-200 flex items-end w-full sm:w-[90ch] leading-snug tracking-wide overflow-hidden h-[57ch]`}
+        className={`${courier.className} z-40 px-[1.5ch] py-[0.5ch] mb-[13ch] bg-slate-800 text-slate-200 flex items-end w-full sm:w-[103ch] leading-snug tracking-wide overflow-hidden h-[57ch] rounded-md`}
       >
         <form ref={formRef} onSubmit={submitHandler} className="select-text">
           <pre className="space-y-[0.25ch]">{renderedOutputs}</pre>
@@ -61,6 +63,12 @@ export default function TerminalScreen({
               name="cmd"
               type="text"
             />
+          </div>
+          <div
+            className={`${hand.className} text-center hidden sm:block absolute translate-y-[13.5ch] lg:translate-y-[14ch] translate-x-[7ch] text-base lg:text-lg text-black w-[14ch] lg:w-[15ch] tracking-wider`}
+          >
+            <p>type "help"</p>
+            <p>for commands</p>
           </div>
         </form>
       </div>

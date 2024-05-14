@@ -8,8 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        "bgColour": '#E8EBED',
+        "discord": '#7289da',
+        "linkedin": '#0077B5'
+      },
       screens: {
-        'sm': '711px'
+        'sm': '759px'
       }
     }
   },
