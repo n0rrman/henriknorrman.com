@@ -67,7 +67,7 @@ export default function TerminalScreen({
           <div
             className={`${hand.className} text-center hidden sm:block absolute translate-y-[13.5ch] lg:translate-y-[14ch] translate-x-[7ch] text-base lg:text-lg text-black w-[14ch] lg:w-[15ch] tracking-wider`}
           >
-            <p>type "help"</p>
+            <p>type &quot;help&quot;</p>
             <p>for commands</p>
           </div>
         </form>
