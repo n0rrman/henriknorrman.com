@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-slate-300">{children}</body>
+      <body className="bg-bgColour">{children}</body>
     </html>
   );
 }
