@@ -38,7 +38,7 @@ export default function TerminalScreen({
 
   return (
     <div
-      className="flex justify-center items-center text-[1.77vw] md:text-xs lg:text-sm pb-[18ch] w-full"
+      className="flex justify-center items-center text-[1.77vw] md:text-xs lg:text-sm pt-16 sm:pt-0 pb-[18ch] w-full"
       onClick={() => {
         inputRef!.current!.focus();
       }}
@@ -59,17 +59,17 @@ export default function TerminalScreen({
             {prompt}
             <input
               ref={inputRef}
-              className="bg-transparent w-[80ch] outline-none mt-[0.25ch]"
+              className="bg-transparent w-full sm:w-[80ch] outline-none mt-[0.25ch]"
               name="cmd"
               type="text"
             />
           </div>
-          <div
+          {/* <div
             className={`${hand.className} text-center hidden md:block absolute translate-y-[13.5ch] translate-x-[7ch] text-base lg:text-lg text-black w-[14ch] lg:w-[15ch] tracking-wider`}
           >
             <p>type &quot;help&quot;</p>
             <p>for commands</p>
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

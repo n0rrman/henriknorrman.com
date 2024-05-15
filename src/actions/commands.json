@@ -11,12 +11,12 @@
     },
     {
         "cmd": "github",
-        "value": "https:github.com/n0rrman",
+        "value": "https://github.com/n0rrman",
         "actionCode": "redirect"
     },
     {
         "cmd": "discord",
-        "value": "https:discord.com/users/235864356980523009",
+        "value": "https://discord.com/users/235864356980523009",
         "actionCode": "redirect"
     },
     {
@@ -26,17 +26,17 @@
     },
     {
         "cmd": "linkedin",
-        "value": "https:linkedin.com/in/henrik-norrman/",
+        "value": "https://linkedin.com/in/henrik-norrman/",
         "actionCode": "redirect"
     },
     {
         "cmd": "source code",
-        "value": "https:github.com/n0rrman/henriknorrman.com",
+        "value": "https://github.com/n0rrman/henriknorrman.com",
         "actionCode": "redirect"
     },
     {
         "cmd": "rm -rf /",
-        "value": "https:youtube.com/watch?v=dQw4w9WgXcQ",
+        "value": "https://youtube.com/watch?v=dQw4w9WgXcQ",
         "actionCode": "redirect"
     },
     {
