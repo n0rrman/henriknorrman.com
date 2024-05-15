@@ -6,7 +6,6 @@ import { useState, startTransition, useRef, useEffect } from "react";
 import { terminalState, CommandAction } from "@/actions";
 import { ActionCode } from "@/actions/action-codes";
 import TerminalScreen from "./terminal-screen";
-import { VscOutput } from "react-icons/vsc";
 
 export default function Terminal() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -53,7 +52,7 @@ export default function Terminal() {
       return {
         id,
         input,
-        output: `Opening ${output.split(":")[1]}`,
+        output: `Opening ${output}`,
         actionCode,
       };
     }

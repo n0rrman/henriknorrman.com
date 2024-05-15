@@ -1,11 +1,6 @@
-import { FaGithub, FaGithubSquare } from "react-icons/fa";
 import { MdAlternateEmail } from "react-icons/md";
-import { BsDiscord } from "react-icons/bs";
-import { RxDiscordLogo } from "react-icons/rx";
 import { IoLogoGithub } from "react-icons/io";
-import { SiAiohttp } from "react-icons/si";
-import { CgWebsite } from "react-icons/cg";
-import { FaLinkedinIn, FaLinkedin } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa6";
 import { AiFillDiscord } from "react-icons/ai";
 import { main } from "@/app/fonts";
 import LinkCard from "./link-card";
@@ -13,7 +8,7 @@ import LinkCard from "./link-card";
 export default function ContactSection() {
   return (
     <div
-      className={`${main.className} flex flex-col p-5 md:p-16 gap-5 md:gap-8 text-3xl sm:text-4xl bg-bgDarkColour w-full max-w-[96.92ch]`}
+      className={`${main.className} flex flex-col py-16 px-5 md:p-16 gap-5 md:gap-8 text-3xl sm:text-4xl bg-bgDarkColour w-full max-w-[96.92ch]`}
     >
       <div className="flex flex-col gap-2">
         <h1 className="text-bgLightColour tracking-wide">External Links</h1>
