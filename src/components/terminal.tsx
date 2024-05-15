@@ -2,11 +2,11 @@
 
 import { useFormState } from "react-dom";
 import { useState, startTransition, useRef, useEffect } from "react";
-import { redirect } from "next/navigation";
 
 import { terminalState, CommandAction } from "@/actions";
 import { ActionCode } from "@/actions/action-codes";
 import TerminalScreen from "./terminal-screen";
+import { VscOutput } from "react-icons/vsc";
 
 export default function Terminal() {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -27,23 +27,42 @@ export default function Terminal() {
     if (formState.payload) {
       const { id, input, output, actionCode } = formState.payload;
 
-      setOutputs((outputs) => [...outputs!, { id, input, output, actionCode }]);
-      handleTerminalAction(output, actionCode);
+      const processedCommand = handleTerminalAction(
+        id,
+        input,
+        output,
+        actionCode
+      );
+      setOutputs((outputs) => [...outputs!, processedCommand]);
     }
   }, [formState]);
 
   // Handle action codes
-  const handleTerminalAction = (value: string, actionCode: string) => {
+  const handleTerminalAction = (
+    id: string,
+    input: string,
+    output: string,
+    actionCode: ActionCode
+  ) => {
     if (actionCode === ActionCode.CLEAR) {
       setOutputs([]);
     }
     if (actionCode === ActionCode.REDIRECT) {
-      redirect(value);
+      window.open(output);
+
+      return {
+        id,
+        input,
+        output: `Opening ${output.split(":")[1]}`,
+        actionCode,
+      };
     }
     if (actionCode === ActionCode.EXIT) {
       setOutputs([]);
       window.history.back();
     }
+
+    return { id, input, output, actionCode };
   };
 
   // Input submit handler

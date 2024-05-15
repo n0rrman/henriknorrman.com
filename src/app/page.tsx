@@ -11,7 +11,7 @@ export default function LandingPage() {
         <Image src={logo} fill alt="" priority loading="eager" />
       </div>
       <Terminal />
-      {/* <ContactSection /> */}
+      <ContactSection />
     </div>
   );
 }

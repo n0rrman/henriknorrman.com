@@ -38,7 +38,7 @@ export default function TerminalScreen({
 
   return (
     <div
-      className="flex justify-center items-center text-[1.77vw] sm:text-xs lg:text-sm pb-[18ch] w-full"
+      className="flex justify-center items-center text-[1.77vw] md:text-xs lg:text-sm pb-[18ch] w-full"
       onClick={() => {
         inputRef!.current!.focus();
       }}
@@ -51,7 +51,7 @@ export default function TerminalScreen({
         </div>
       </div>
       <div
-        className={`${courier.className} z-40 px-[1.5ch] py-[0.5ch] mb-[13ch] bg-slate-800 text-slate-200 flex items-end w-full sm:w-[103ch] leading-snug tracking-wide overflow-hidden h-[57ch] rounded-md`}
+        className={`${courier.className} z-40 px-[1.5ch] py-[0.5ch] mb-[13ch] bg-slate-800 text-slate-200 flex items-end w-full md:w-[103ch] leading-snug tracking-wide overflow-hidden h-[57ch] rounded-none md:rounded-md`}
       >
         <form ref={formRef} onSubmit={submitHandler} className="select-text">
           <pre className="space-y-[0.25ch]">{renderedOutputs}</pre>
@@ -59,13 +59,13 @@ export default function TerminalScreen({
             {prompt}
             <input
               ref={inputRef}
-              className="bg-transparent w-[67ch] outline-none mt-[0.25ch]"
+              className="bg-transparent w-[80ch] outline-none mt-[0.25ch]"
               name="cmd"
               type="text"
             />
           </div>
           <div
-            className={`${hand.className} text-center hidden sm:block absolute translate-y-[13.5ch] lg:translate-y-[14ch] translate-x-[7ch] text-base lg:text-lg text-black w-[14ch] lg:w-[15ch] tracking-wider`}
+            className={`${hand.className} text-center hidden md:block absolute translate-y-[13.5ch] translate-x-[7ch] text-base lg:text-lg text-black w-[14ch] lg:w-[15ch] tracking-wider`}
           >
             <p>type &quot;help&quot;</p>
             <p>for commands</p>

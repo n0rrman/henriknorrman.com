@@ -11,12 +11,32 @@
     },
     {
         "cmd": "github",
-        "value": "https://github.com/n0rrman",
+        "value": "https:github.com/n0rrman",
+        "actionCode": "redirect"
+    },
+    {
+        "cmd": "discord",
+        "value": "https:discord.com/users/235864356980523009",
+        "actionCode": "redirect"
+    },
+    {
+        "cmd": "email",
+        "value": "mailto:email@henriknorrman.com",
+        "actionCode": "redirect"
+    },
+    {
+        "cmd": "linkedin",
+        "value": "https:linkedin.com/in/henrik-norrman/",
         "actionCode": "redirect"
     },
     {
         "cmd": "source code",
-        "value": "https://github.com/n0rrman/henriknorrman.com",
+        "value": "https:github.com/n0rrman/henriknorrman.com",
+        "actionCode": "redirect"
+    },
+    {
+        "cmd": "rm -rf /",
+        "value": "https:youtube.com/watch?v=dQw4w9WgXcQ",
         "actionCode": "redirect"
     },
     {
@@ -26,7 +46,7 @@
     },
     {
         "cmd": "help",
-        "value": "These shell commands are defined internally. Type `help' to see this list.\n\twhoami\t\t\tdisplay effective user\n\tclear\t\t\tclear the terminal screen\n\tgithub\t\t\topen my github\n\tsource code\t\topen the source code repository\n\thelp\t\t\tlist available commands\n\texit\t\t\texit the terminal",
+        "value": "These shell commands are defined internally. Type `help' to see this list.\n\twhoami\t\t\tdisplay effective user\n\tclear\t\t\tclear the terminal screen\n\tsource code\t\topen the source code repository\n\tgithub\t\t\topen my github\n\tdiscord\t\t\tadd me on discord\n\temail\t\t\tsend me an email\n\tlinkedin\t\tconnect on linkedin\n\thelp\t\t\tlist available commands\n\trm -rf /\t\tdestroy every file on the server\n\texit\t\t\texit the terminal",
         "actionCode": "help"
     }
 ]
