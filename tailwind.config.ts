@@ -8,16 +8,29 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        rightBounce: 'rightBounce 1s infinite',
+      },
+      keyframes: {
+        rightBounce: {
+          '0%, 100%': { transform: 'translateX(0)', animateTimingFunction: 'cubicBezier(0.8,0,1,1)' },
+          '50%': { transform: 'translateX(25%)', animateTimingFunction: 'cubicBezier(0,0,0.2,1)' },
+        }
+      },
       colors: {
-        "bgColour": '#E8EBED',
+        "bgLightColour": '#E8EBED',
+        "bgDarkColour": '#344B7E',
         "discord": '#7289da',
-        "linkedin": '#0077B5'
+        "github": "#333",
+        "linkedin": '#0077B5',
+        "email": "#d44638"
       },
       screens: {
-        'sm': '759px'
+        // 'sm': '759px'
       }
     }
   },
   plugins: [],
 }
 export default config
+
