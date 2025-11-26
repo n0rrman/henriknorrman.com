@@ -34,6 +34,7 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
 USER nextjs
+USER 1000
 
 EXPOSE 80
 ENV PORT 80
