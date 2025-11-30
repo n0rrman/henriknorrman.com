@@ -1,4 +1,4 @@
-name: deploy
+name: Deploy to GHCR
 
 on:
   push:
@@ -31,13 +31,3 @@ jobs:
           tags: | 
             ${{ secrets.IMAGE_NAME }}:${{ github.sha }}
             ${{ secrets.IMAGE_NAME }}:latest
-
-          
-      - name: Deploy to Swarm
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.KEY }}
-          port: ${{ secrets.PORT }}
-          script: docker stack deploy -c ${{ secrets.YAML_PATH }} ${{ secrets.SERVICE_NAME }}
