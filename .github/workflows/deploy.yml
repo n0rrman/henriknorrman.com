@@ -28,7 +28,10 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+          tags: | 
+            ${{ secrets.IMAGE_NAME }}:${{ github.sha }}
+            ${{ secrets.IMAGE_NAME }}:latest
+
           
       - name: Deploy to Swarm
         uses: appleboy/ssh-action@v1.0.3
