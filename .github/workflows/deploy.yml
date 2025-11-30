@@ -23,7 +23,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ github.sha }}
+          tags: ${{ secrets.IMAGE_NAME }}:${{ github.sha }}
           
       - name: Deploy to Swarm
         uses: appleboy/ssh-action@v1.0.3
